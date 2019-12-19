@@ -30,8 +30,8 @@ public class MusicPlayer {
 //        this.music = music;
 //    }
 
-    public void playMusic() {
-        System.out.println("Playing song: " + classicalMusic.getSong());
-        System.out.println("Playing song: " + rockMusic.getSong());
+    public String playMusic() {
+        return "Playing song: " + classicalMusic.getSong();
+
     }
 }
