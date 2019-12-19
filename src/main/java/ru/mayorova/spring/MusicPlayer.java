@@ -5,17 +5,33 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
+
 @Component
 public class MusicPlayer {
-    private Music music;
 
-    //IoC (through constructor)
+    private ClassicalMusic classicalMusic;
+    private RockMusic rockMusic;
+
     @Autowired
-    public MusicPlayer(Music music) {
-        this.music = music;
+    public MusicPlayer(ClassicalMusic classicalMusic, RockMusic rockMusic) {
+        this.classicalMusic = classicalMusic;
+        this.rockMusic = rockMusic;
     }
 
+
+//    @Autowired
+//    private Music music;
+
+//    public MusicPlayer(Music music) {
+//        this.music = music;
+//    }
+//@Autowired
+//    public void setMusic(Music music) {
+//        this.music = music;
+//    }
+
     public void playMusic() {
-        System.out.println("Playing song: " + music.getSong());
+        System.out.println("Playing song: " + classicalMusic.getSong());
+        System.out.println("Playing song: " + rockMusic.getSong());
     }
 }
